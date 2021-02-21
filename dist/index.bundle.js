@@ -16,7 +16,47 @@
   \******************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scss_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../scss/main.scss */ \"./src/scss/main.scss\");\n // import header from './mymodules/header';\n\nconst accessToken = \"pk.eyJ1IjoieW9jb29ubyIsImEiOiJjazhtYXVrcGgwbHNjM2VwaDFvdjZncmZnIn0.8qVE_QjxtBJmTEAhwkBbIg\";\nconst appId = \"e59acf44e4a058aded4a5d6e10b4b052\";\n\nconst location = async location => {\n  const response = await fetch(\"https://api.mapbox.com/geocoding/v5/mapbox.places/\".concat(location, \".json?access_token=\").concat(accessToken));\n\n  if (response.ok) {\n    const data = await response.json();\n    return data;\n  }\n\n  throw new Error('Unalble to fetch the location data');\n};\n\nconst weather = async (latitude, longtitude) => {\n  const response = await fetch(\"https://api.openweathermap.org/data/2.5/weather?lat=\".concat(latitude, \"&lon=\").concat(longtitude, \"&appid=\").concat(appId));\n\n  if (response.ok) {\n    const data = await response.json();\n    return data;\n  }\n\n  throw new Error('Unable to fetch the weather data');\n};\n\nconst renderForecast = (placeName, weatherData) => {\n  const container = document.getElementById('result');\n  const kToC = 273.15;\n  const temp = Math.round(weatherData.main.temp - kToC);\n  const {\n    humidity\n  } = weatherData.main;\n  const weather = weatherData.weather[0].main;\n  const {\n    description\n  } = weatherData.weather[0];\n  const {\n    icon\n  } = weatherData.weather[0];\n  const iconImgSrc = \"http://openweathermap.org/img/wn/\".concat(icon, \"@2x.png\");\n  container.innerHTML = \"\\n  <div class=\\\"weather__place\\\">\".concat(placeName, \"</div>\\n  <div class=\\\"weather__title\\\">\").concat(weather, \"</div>\\n  <img src=\\\"\").concat(iconImgSrc, \"\\\" alt=\\\"\").concat(weather, \"\\\" class=\\\"weather__image\\\">\\n  <div class=\\\"weather__desc\\\">\").concat(description, \"</div>\\n  <p class=\\\"weather__text\\\">It is currently <span>\").concat(temp, \"</span>&#8451;. Humidity is <span>\").concat(humidity, \"</span>%.</p>\");\n};\n\ndocument.getElementById('search-form').addEventListener('submit', async e => {\n  e.preventDefault();\n  const keyword = await e.target.elements.locName.value.toLowerCase();\n  const locData = await location(keyword);\n  const weatherData = await weather(locData.features[0].center[1], locData.features[0].center[0]);\n  renderForecast(locData.features[0].place_name, weatherData);\n  document.querySelector('.weather').classList.add('open');\n  e.target.elements.locName.value = '';\n});\n\n//# sourceURL=webpack://new-weather-app/./src/scripts/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scss_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../scss/main.scss */ \"./src/scss/main.scss\");\n/* harmony import */ var _mymodules_search__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./mymodules/search */ \"./src/scripts/mymodules/search.js\");\n\n\n(0,_mymodules_search__WEBPACK_IMPORTED_MODULE_1__.default)();\n\n//# sourceURL=webpack://new-weather-app/./src/scripts/index.js?");
+
+/***/ }),
+
+/***/ "./src/scripts/mymodules/location.js":
+/*!*******************************************!*\
+  !*** ./src/scripts/mymodules/location.js ***!
+  \*******************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\nconst accessToken = \"pk.eyJ1IjoieW9jb29ubyIsImEiOiJjazhtYXVrcGgwbHNjM2VwaDFvdjZncmZnIn0.8qVE_QjxtBJmTEAhwkBbIg\";\n\nconst location = async location => {\n  const response = await fetch(\"https://api.mapbox.com/geocoding/v5/mapbox.places/\".concat(location, \".json?access_token=\").concat(accessToken));\n\n  if (response.ok) {\n    const data = await response.json();\n    return data;\n  }\n\n  throw new Error('Unalble to fetch the location data');\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (location);\n\n//# sourceURL=webpack://new-weather-app/./src/scripts/mymodules/location.js?");
+
+/***/ }),
+
+/***/ "./src/scripts/mymodules/render.js":
+/*!*****************************************!*\
+  !*** ./src/scripts/mymodules/render.js ***!
+  \*****************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\nconst renderWeather = (placeName, weatherData) => {\n  const container = document.getElementById('result');\n  const kToC = 273.15;\n  const temp = Math.round(weatherData.main.temp - kToC);\n  const {\n    humidity\n  } = weatherData.main;\n  const weather = weatherData.weather[0].main;\n  const {\n    description\n  } = weatherData.weather[0];\n  const {\n    icon\n  } = weatherData.weather[0];\n  const iconImgSrc = \"http://openweathermap.org/img/wn/\".concat(icon, \"@2x.png\");\n  container.innerHTML = \"\\n  <div class=\\\"weather__place\\\">\".concat(placeName, \"</div>\\n  <div class=\\\"weather__title\\\">\").concat(weather, \"</div>\\n  <img src=\\\"\").concat(iconImgSrc, \"\\\" alt=\\\"\").concat(weather, \"\\\" class=\\\"weather__image\\\">\\n  <div class=\\\"weather__desc\\\">\").concat(description, \"</div>\\n  <p class=\\\"weather__text\\\">It is currently <span>\").concat(temp, \"</span>&#8451;. Humidity is <span>\").concat(humidity, \"</span>%.</p>\");\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (renderWeather);\n\n//# sourceURL=webpack://new-weather-app/./src/scripts/mymodules/render.js?");
+
+/***/ }),
+
+/***/ "./src/scripts/mymodules/search.js":
+/*!*****************************************!*\
+  !*** ./src/scripts/mymodules/search.js ***!
+  \*****************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _location__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./location */ \"./src/scripts/mymodules/location.js\");\n/* harmony import */ var _weather__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./weather */ \"./src/scripts/mymodules/weather.js\");\n/* harmony import */ var _render__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./render */ \"./src/scripts/mymodules/render.js\");\n\n\n\n\nconst search = () => {\n  document.getElementById('search-form').addEventListener('submit', async e => {\n    e.preventDefault();\n    const keyword = await e.target.elements.locName.value.toLowerCase();\n    const locData = await (0,_location__WEBPACK_IMPORTED_MODULE_0__.default)(keyword);\n    const weatherData = await (0,_weather__WEBPACK_IMPORTED_MODULE_1__.default)(locData.features[0].center[1], locData.features[0].center[0]);\n    (0,_render__WEBPACK_IMPORTED_MODULE_2__.default)(locData.features[0].place_name, weatherData);\n    document.querySelector('.weather').classList.add('open');\n    e.target.elements.locName.value = '';\n  });\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (search);\n\n//# sourceURL=webpack://new-weather-app/./src/scripts/mymodules/search.js?");
+
+/***/ }),
+
+/***/ "./src/scripts/mymodules/weather.js":
+/*!******************************************!*\
+  !*** ./src/scripts/mymodules/weather.js ***!
+  \******************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\nconst appId = \"e59acf44e4a058aded4a5d6e10b4b052\";\n\nconst weather = async (latitude, longtitude) => {\n  const response = await fetch(\"https://api.openweathermap.org/data/2.5/weather?lat=\".concat(latitude, \"&lon=\").concat(longtitude, \"&appid=\").concat(appId));\n\n  if (response.ok) {\n    const data = await response.json();\n    return data;\n  }\n\n  throw new Error('Unable to fetch the weather data');\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (weather);\n\n//# sourceURL=webpack://new-weather-app/./src/scripts/mymodules/weather.js?");
 
 /***/ }),
 

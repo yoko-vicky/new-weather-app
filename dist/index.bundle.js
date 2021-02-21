@@ -30,6 +30,16 @@ eval("__webpack_require__.r(__webpack_exports__);\nconst accessToken = \"pk.eyJ1
 
 /***/ }),
 
+/***/ "./src/scripts/modules/photo.js":
+/*!**************************************!*\
+  !*** ./src/scripts/modules/photo.js ***!
+  \**************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\nconst photo = async keyword => {\n  keyword = keyword.toLowerCase();\n  const response = await fetch(\"https://api.pexels.com/v1/search?per_page=1&query=\".concat(keyword), {\n    method: 'GET',\n    headers: {\n      Accept: 'application/json',\n      Authorization: \"563492ad6f91700001000001eb17e163552e4974a5470de95bb4a996\"\n    }\n  });\n  const data = await response.json();\n  return data.photos[0];\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (photo);\n\n//# sourceURL=webpack://new-weather-app/./src/scripts/modules/photo.js?");
+
+/***/ }),
+
 /***/ "./src/scripts/modules/render.js":
 /*!***************************************!*\
   !*** ./src/scripts/modules/render.js ***!
@@ -46,7 +56,7 @@ eval("__webpack_require__.r(__webpack_exports__);\nconst renderWeather = (placeN
   \***************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _location__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./location */ \"./src/scripts/modules/location.js\");\n/* harmony import */ var _weather__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./weather */ \"./src/scripts/modules/weather.js\");\n/* harmony import */ var _render__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./render */ \"./src/scripts/modules/render.js\");\n\n\n\n\nconst search = () => {\n  document.getElementById('search-form').addEventListener('submit', async e => {\n    e.preventDefault();\n    document.getElementById('loading').classList.add('play');\n    const inputQuery = e.target.elements.locName.value.toLowerCase().trim().replace(' ', '');\n    const locData = await (0,_location__WEBPACK_IMPORTED_MODULE_0__.default)(inputQuery);\n    const weatherData = await (0,_weather__WEBPACK_IMPORTED_MODULE_1__.default)(locData.features[0].center[1], locData.features[0].center[0]);\n    (0,_render__WEBPACK_IMPORTED_MODULE_2__.default)(locData.features[0].place_name, weatherData);\n    document.querySelector('.weather').classList.add('open');\n    e.target.elements.locName.value = '';\n  });\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (search);\n\n//# sourceURL=webpack://new-weather-app/./src/scripts/modules/search.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _location__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./location */ \"./src/scripts/modules/location.js\");\n/* harmony import */ var _weather__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./weather */ \"./src/scripts/modules/weather.js\");\n/* harmony import */ var _render__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./render */ \"./src/scripts/modules/render.js\");\n/* harmony import */ var _photo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./photo */ \"./src/scripts/modules/photo.js\");\n\n\n\n\n\nconst renderError = error => {\n  const errorContainer = document.getElementById('error-msg');\n  errorContainer.textContent = error;\n};\n\nconst displayBackgroundImage = async keyword => {\n  const data = await (0,_photo__WEBPACK_IMPORTED_MODULE_3__.default)(keyword); // const body = document.querySelector('body');\n\n  console.log(data);\n};\n\nconst search = () => {\n  document.getElementById('search-form').addEventListener('submit', async e => {\n    e.preventDefault();\n    document.getElementById('loading').classList.add('play');\n    const inputQuery = e.target.elements.locName.value.toLowerCase().trim().replace(' ', '');\n\n    try {\n      const locData = await (0,_location__WEBPACK_IMPORTED_MODULE_0__.default)(inputQuery); // eslint-disable-next-line max-len\n\n      const weatherData = await (0,_weather__WEBPACK_IMPORTED_MODULE_1__.default)(locData.features[0].center[1], locData.features[0].center[0]);\n      (0,_render__WEBPACK_IMPORTED_MODULE_2__.default)(locData.features[0].place_name, weatherData);\n      document.querySelector('.weather').classList.add('open');\n      displayBackgroundImage(weatherData.weather[0].main);\n    } catch (error) {\n      renderError(error);\n    }\n\n    e.target.elements.locName.value = '';\n  });\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (search);\n\n//# sourceURL=webpack://new-weather-app/./src/scripts/modules/search.js?");
 
 /***/ }),
 

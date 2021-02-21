@@ -1,4 +1,5 @@
 const renderWeather = (placeName, weatherData) => {
+  document.getElementById('loading').classList.remove('play');
   const container = document.getElementById('result');
   const kToC = 273.15;
   const temp = Math.round(weatherData.main.temp - kToC);

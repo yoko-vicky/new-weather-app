@@ -7,19 +7,25 @@
 </head>
 <body>
   <div class="container">
-    <h1 class="main-heading">Weather App</h1>
+    <header class="header"><h1 class="main-heading">Weather App</h1></header>
 
-    <div class="search">
-      <p class="search__comment">Would you like to know the current weather?<br>Please input a city-name where you want to know</p>
-      <form id="search-form" class="search__form">
-        <input type="text" placeholder="eg. tokyo" class="search__input" name="locName" pattern="[A-Za-z]*" required>
-        <button class="search__btn">Search</button>
-      </form>
-    </div>
+    <main class="main">
+      <div class="search">
+        <p class="search__comment">Would you like to know the current weather?<br>Please input a city-name where you want to know</p>
+        <form id="search-form" class="search__form">
+          <input type="text" placeholder="eg. tokyo" class="search__input" name="locName" pattern="[A-Za-z]*" required>
+          <button class="search__btn">Search</button>
+        </form>
+      </div>
 
-    <div class="weather">
-      <div class="weather__container" id="result"></div>
-    </div>
+      <div class="weather">
+        <div class="weather__container" id="result"></div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      &copy; <a href="https://github.com/yocosaka" target="_blank">Yoko Saka</a> 2021
+    </footer>
   </div>
   <script src="./index.bundle.js"></script>
 </body>

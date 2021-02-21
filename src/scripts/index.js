@@ -1,4 +1,4 @@
 import '../scss/main.scss';
-import search from './mymodules/search';
+import search from './modules/search';
 
 search();

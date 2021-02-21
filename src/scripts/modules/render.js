@@ -10,9 +10,8 @@ const renderWeather = (placeName, weatherData) => {
 
   container.innerHTML = `
   <div class="weather__place">${placeName}</div>
-  <div class="weather__title">${weather}</div>
+  <div class="weather__title">It's ${description}</div>
   <img src="${iconImgSrc}" alt="${weather}" class="weather__image">
-  <div class="weather__desc">${description}</div>
   <p class="weather__text">It is currently <span>${temp}</span>&#8451;. Humidity is <span>${humidity}</span>%.</p>`;
 };
 

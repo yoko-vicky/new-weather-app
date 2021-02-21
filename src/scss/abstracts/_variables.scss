@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel:wght@200;700&display=swap');
+
 // COLORS
 $color-primary: #d35266;
 $grey: #777;
@@ -8,8 +10,9 @@ $black: #202020;
 
 // FONT
 $default-font-size: 1.6rem;
-// $font-family:
+$font-family: 'Martel', serif;
 
 // WIDTH
 $basic-width: 94%;
 $basic-max-width: 120rem;
+$content-max-width: 60rem;

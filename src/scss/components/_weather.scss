@@ -1,0 +1,33 @@
+.weather {
+  display: none;
+  max-width: $content-max-width;
+  margin: 0 auto 3rem;
+  padding: 3rem;
+  background: pink;
+  border-radius: 3px;
+
+  &.open {
+    display: block;
+  }
+
+  &__place {
+    font-weight: bold;
+    font-size: 1.6rem;
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 3rem;
+  }
+
+  &__image {
+    margin: 0 auto 1rem;
+  }
+
+  &__text {
+    span {
+      font-size: 150%;
+      font-weight: bold;
+    }
+  }
+}

@@ -1,7 +1,6 @@
 .search {
   max-width: $content-max-width;
   margin: 0 auto 3rem;
-  // background: rgba($white, 0.3);
   padding: 3rem;
   border-radius: 3px;
 
@@ -10,16 +9,23 @@
     color: $white;
   }
 
+  &__form {
+    display: flex;
+  }
+
+  &__select {
+    background: rgba($white, 0.8);
+    font-family: inherit;
+    padding: 1rem 0;
+  }
+
   &__input {
-    display: block;
     background: rgba($white, 0.5);
     font-family: inherit;
     font-weight: bold;
     font-size: 2rem;
     padding: 1rem;
-    width: 100%;
     border-radius: 3px;
-    margin: 0 auto 2rem;
   }
 
   &__btn {

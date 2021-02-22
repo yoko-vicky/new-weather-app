@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 # Weather App
-![Top Page Screenshot](./screenshot.png)
+![Top Page Screenshot](./screenshot-n.png)
 
 
 ## About the Project
@@ -10,6 +10,7 @@ This project is based on the [Odin project: Weather App](https://www.theodinproj
 **Users can do actions like below in this application:**
 - Search the location they want to know the weather
 - Get the current weather information including temperature and humidity
+- Select the unit of temperature that users want to know
 - Enjoy random image changed corresponding to the weather result
 
 A list of commonly used resources that I find helpful is listed in the acknowledgments.
@@ -35,7 +36,7 @@ A list of commonly used resources that I find helpful is listed in the acknowled
 
 ## Live Demo
 
-[Live Demo Link](https://yocosaka-weather-app.netlify.app/)
+[Live Demo Link](https://yokosaka-weather-app.netlify.app/)
 
 
 ## Getting Started

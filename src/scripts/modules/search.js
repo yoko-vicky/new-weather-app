@@ -3,11 +3,6 @@ import weather from './weather';
 import renderWeather from './render';
 import photo from './photo';
 
-const renderError = (error) => {
-  const errorContainer = document.getElementById('error-msg');
-  errorContainer.textContent = error;
-};
-
 const displayBackgroundImage = async (keyword) => {
   const photoPath = await photo(keyword);
   const body = document.querySelector('body');
@@ -27,7 +22,7 @@ const search = () => {
       document.querySelector('.weather').classList.add('open');
       displayBackgroundImage(weatherData.weather[0].main);
     } catch (error) {
-      renderError(error);
+      document.getElementById('loading').classList.remove('play');
     }
     e.target.elements.locName.value = '';
   });

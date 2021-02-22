@@ -11,7 +11,14 @@ html {
 }
 
 body {
+  background: url('https://images.pexels.com/photos/912110/pexels-photo-912110.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200');
   box-sizing: border-box;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: soft-light;
+  min-height: 100vh;
+  position: relative;
 }
 
 ul {
@@ -62,8 +69,16 @@ table {
 }
 
 .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
   width: $basic-width;
-  max-width: $basic-max-width;
-  margin: 4rem auto;
+  max-width: 60rem;
+  height: 100%;
+  min-height: 100vh;
+  padding: 5rem 0;
+  margin: 0 auto;
   text-align: center;
+  background: rgba($black, 0.3);
 }

@@ -5,7 +5,7 @@
 
 ## About the Project
 
-This project is based on the [Odin project: Weather App](https://www.theodinproject.com/courses/javascript/lessons/weather-app). I used [Weather API](https://openweathermap.org/api) to take and show weather information based on the location data taking from [MapBox API](https://docs.mapbox.com/api/overview/).
+This project is based on the [Odin project: Weather App](https://www.theodinproject.com/courses/javascript/lessons/weather-app). I used [Weather API](https://openweathermap.org/api) to take and show weather information based on the location data taking from [MapBox API](https://docs.mapbox.com/api/overview/). Also, the background image, which is provided by [Pexels API](https://www.pexels.com/api/documentation/), is changed randomly corresponding to the weather of the location you've searched.
 
 A list of commonly used resources that I find helpful is listed in the acknowledgments.
 
@@ -45,7 +45,16 @@ To get a local copy up and running follow these simple example steps.
 6. Type git clone, and then paste the URL you copied in Step 3. <br>
 e.g. $ git clone https://github.com/yourUsername/yourProjectName 
 7. Press Enter. Your local copy will be created. 
-
+8. In the console, go to the place where you cloned this folder, and run `npm install`
+9. Go to each API's website and create your free account to get token/key/id
+  - [Weather API](https://openweathermap.org/api)
+  - [MapBox API](https://docs.mapbox.com/api/overview/)
+  - [Pexels API](https://www.pexels.com/api/documentation/)
+10. create .env file in the top level of the directory, and write your token/key/id like below:
+`MAPBOX_ACCESS_TOKEN=<YOURTOKENHERE>
+WEATHER_APP_ID=<YOURTOKENHERE>
+PEXELS_API_KEY=<YOURTOKENHERE>`
+11. Run `npm run dev`, then the server will be opened
 
 ## Author
 
@@ -82,3 +91,4 @@ This project is [MIT](./LICENSE) licensed.
 - [Odin project: Weather App](https://www.theodinproject.com/courses/javascript/lessons/weather-app)
 - [Weather API](https://openweathermap.org/api)
 - [MapBox API](https://docs.mapbox.com/api/overview/)
+- [Pexels API](https://www.pexels.com/api/documentation/)

@@ -1,17 +1,18 @@
 .search {
   max-width: $content-max-width;
   margin: 0 auto 3rem;
-  background: $light-grey-2;
+  // background: rgba($white, 0.3);
   padding: 3rem;
   border-radius: 3px;
 
   &__comment {
     margin: 0 auto 2rem;
+    color: $white;
   }
 
   &__input {
     display: block;
-    background: $white;
+    background: rgba($white, 0.5);
     font-family: inherit;
     font-weight: bold;
     font-size: 2rem;

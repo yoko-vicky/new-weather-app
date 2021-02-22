@@ -9,9 +9,9 @@ const renderError = (error) => {
 };
 
 const displayBackgroundImage = async (keyword) => {
-  const data = await photo(keyword);
-  // const body = document.querySelector('body');
-  console.log(data);
+  const photoPath = await photo(keyword);
+  const body = document.querySelector('body');
+  body.style.backgroundImage = `url(${photoPath})`;
 };
 
 const search = () => {

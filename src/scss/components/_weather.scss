@@ -3,9 +3,10 @@
   max-width: $content-max-width;
   margin: 0 auto 3rem;
   padding: 3rem;
-  background: $yellow;
+  // background: rgba($black, 0.2);
   border-radius: 3px;
   position: relative;
+  color: $white;
 
   &.open {
     display: block;

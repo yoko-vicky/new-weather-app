@@ -30,7 +30,7 @@ A list of commonly used resources that I find helpful is listed in the acknowled
 
 ## Live Demo
 
-[Live Demo Link](https://yocosaka.github.io)
+[Live Demo Link](https://yocosaka-weather-app.netlify.app/)
 
 
 ## Getting Started
@@ -51,10 +51,10 @@ e.g. $ git clone https://github.com/yourUsername/yourProjectName
   - [MapBox API](https://docs.mapbox.com/api/overview/)
   - [Pexels API](https://www.pexels.com/api/documentation/)
 10. create .env file in the top level of the directory, and write your token/key/id like below:
-`MAPBOX_ACCESS_TOKEN=<YOURTOKENHERE>
-WEATHER_APP_ID=<YOURTOKENHERE>
-PEXELS_API_KEY=<YOURTOKENHERE>`
-11. Run `npm run dev`, then the server will be opened
+`MAPBOX_ACCESS_TOKEN=<YOURTOKENHERE>`
+`WEATHER_APP_ID=<YOURTOKENHERE>`
+`PEXELS_API_KEY=<YOURTOKENHERE>`
+11. Run `npm run dev`, and the server will be opened, then click "dist" folder
 
 ## Author
 

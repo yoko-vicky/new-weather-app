@@ -1,4 +1,5 @@
 const path = require('path');
+/* eslint import/no-unresolved: 2 */
 const Dotenv = require('dotenv-webpack');
 
 module.exports = {

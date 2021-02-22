@@ -16,7 +16,6 @@ const photo = async (keyword) => {
     return data.photos[i].src.landscape;
   }
   return defaultImagePath;
-
 };
 
 export default photo;

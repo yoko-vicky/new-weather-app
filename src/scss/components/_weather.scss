@@ -12,6 +12,11 @@
     display: block;
   }
 
+  &__error {
+    font-size: 3rem;
+    padding: 3rem;
+  }
+
   &__place {
     font-weight: bold;
     font-size: 1.6rem;

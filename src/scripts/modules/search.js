@@ -23,7 +23,7 @@ const search = () => {
       const locData = await location(inputQuery);
       // eslint-disable-next-line max-len
       const weatherData = await weather(locData.features[0].center[1], locData.features[0].center[0]);
-      renderWeather(locData.features[0].place_name, weatherData);
+      renderWeather(locData.features[0].place_name, weatherData, e.target.elements.tempUnit.value);
       document.querySelector('.weather').classList.add('open');
       displayBackgroundImage(weatherData.weather[0].main);
     } catch (error) {

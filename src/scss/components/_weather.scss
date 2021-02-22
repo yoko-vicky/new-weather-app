@@ -1,0 +1,41 @@
+.weather {
+  display: none;
+  max-width: $content-max-width;
+  margin: 0 auto 3rem;
+  padding: 3rem;
+  // background: rgba($black, 0.2);
+  border-radius: 3px;
+  position: relative;
+  color: $white;
+
+  &.open {
+    display: block;
+  }
+
+  &__error {
+    font-size: 3rem;
+    padding: 3rem;
+  }
+
+  &__place {
+    font-weight: bold;
+    font-size: 1.6rem;
+    margin: 0 auto 1rem;
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 3rem;
+  }
+
+  &__image {
+    margin: 0 auto 1rem;
+  }
+
+  &__text {
+    span {
+      font-size: 150%;
+      font-weight: bold;
+    }
+  }
+}

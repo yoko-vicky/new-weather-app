@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="icon" href="fav.png" type="image/png">
+</head>
+<body>
+  <div class="container">
+    <header class="header"><h1 class="main-heading">Weather App</h1></header>
+
+    <main class="main">
+      <div class="search">
+        <p class="search__comment">Please input a city-name where you want to know the weather.</p>
+        <form id="search-form" class="search__form">
+          <input type="text" placeholder="eg. tokyo" class="search__input" name="locName" pattern="[A-Za-z]*" required>
+          <select name="tempUnit" class="search__select">
+            <option value="ce">&#8451;</option>
+            <option value="fa">&#8457;</option>
+          </select>
+          <button class="search__btn">Search</button>
+        </form>
+      </div>
+
+      <div class="weather">
+        <div id="error-msg" class="weather__error"></div>
+        <div class="loading" id="loading"><div></div><div></div><div></div></div>
+        <div class="weather__container" id="result"></div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      &copy; <a href="https://github.com/yocosaka" target="_blank">Yoko Saka</a> 2021
+    </footer>
+  </div>
+  <script src="./index.bundle.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+.search {
+  max-width: $content-max-width;
+  margin: 0 auto;
+  padding: 3rem;
+  border-radius: 3px;
+
+  &__comment {
+    margin: 0 auto 2rem;
+    color: $white;
+  }
+
+  &__form {
+    display: flex;
+  }
+
+  &__select {
+    background: rgba($white, 0.8);
+    font-family: inherit;
+    padding: 1rem 0;
+  }
+
+  &__input {
+    background: rgba($white, 0.5);
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 2rem;
+    padding: 1rem;
+    border-radius: 3px;
+  }
+
+  &__btn {
+    display: block;
+    background: $black;
+    color: $white;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 3px;
+    font-family: inherit;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.4s;
+
+    &:hover {
+      border-color: $black;
+      color: $black;
+      background: $white;
+    }
+  }
+}

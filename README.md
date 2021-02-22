@@ -7,6 +7,11 @@
 
 This project is based on the [Odin project: Weather App](https://www.theodinproject.com/courses/javascript/lessons/weather-app). I used [Weather API](https://openweathermap.org/api) to take and show weather information based on the location data taking from [MapBox API](https://docs.mapbox.com/api/overview/). Also, the background image, which is provided by [Pexels API](https://www.pexels.com/api/documentation/), is changed randomly corresponding to the weather of the location you've searched.
 
+**Users can do actions like below in this application:**
+- Search the location they want to know the weather
+- Get the current weather information including temperature and humidity
+- Enjoy random image changed corresponding to the weather result
+
 A list of commonly used resources that I find helpful is listed in the acknowledgments.
 
 

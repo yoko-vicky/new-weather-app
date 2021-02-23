@@ -81,4 +81,8 @@ table {
   margin: 0 auto;
   text-align: center;
   background: rgba($black, 0.3);
+
+  @include mq(tab) {
+    width: 100%;
+  }
 }

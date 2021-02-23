@@ -11,6 +11,10 @@
 
   &__form {
     display: flex;
+
+    @include mq(mob) {
+      flex-flow: column;
+    }
   }
 
   &__select {
